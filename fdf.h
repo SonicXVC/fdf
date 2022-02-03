@@ -6,7 +6,7 @@
 /*   By: ameteori <ameteori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:50:34 by ameteori          #+#    #+#             */
-/*   Updated: 2022/02/03 19:00:35 by ameteori         ###   ########.fr       */
+/*   Updated: 2022/02/03 20:10:14 by ameteori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,19 @@
 # include <fcntl.h>
 # include <math.h>
 
-typedef struct
+typedef struct s_fdf
 {
 	int		width;
-	int 	height;
-	int 	**z_matrix;
-	int 	zoom;
-	int 	color;
+	int		height;
+	int		**z_matrix;
+	int		zoom;
+	int		color;
 	int		shift_x;
-	int 	shift_y;
+	int		shift_y;
 
 	void	*mlx_ptr;
 	void	*win_ptr;
-}			fdf;
+}			t_fdf;
 
 typedef struct s_point
 {
@@ -44,15 +44,16 @@ typedef struct s_point
 
 float	modulo(float a);
 float	maximum(float a, float b);
-void	color(int z, int z1, fdf *data);
+void	color(int z, int z1, t_fdf *data);
 int		get_width(char *file_name);
 int		get_height(char *file_name);
 void	fill_matrix(int *z_line, char *line);
-void	read_file(char *file_name, fdf *data);
-void	formula(t_point tmp, t_point tmp1, fdf *data);
+void	read_file(char *file_name, t_fdf *data);
+void	formula(t_point tmp, t_point tmp1, t_fdf *data);
 void	isom(float *x, float *y, int z);
-int		deal_mouse(int key, fdf *data);
-int		deal_key(int key, fdf *data);
-void	draw(fdf *data);
+int		deal_mouse(int key, t_fdf *data);
+int		deal_key(int key, t_fdf *data);
+void	draw(t_fdf *data);
+void	shift(t_point *tmp, t_point *tmp1, t_point *step, t_fdf *data);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ameteori <ameteori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:50:26 by ameteori          #+#    #+#             */
-/*   Updated: 2022/02/03 19:17:28 by ameteori         ###   ########.fr       */
+/*   Updated: 2022/02/03 20:09:03 by ameteori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	fill_matrix(int *z_line, char *line)
 	free(nums);
 }
 
-void	read_file(char *file_name, fdf *data)
+void	read_file(char *file_name, t_fdf *data)
 {
 	int		fd;
 	char	*line;

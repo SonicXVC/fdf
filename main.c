@@ -6,13 +6,13 @@
 /*   By: ameteori <ameteori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:53:21 by ameteori          #+#    #+#             */
-/*   Updated: 2022/02/03 18:33:24 by ameteori         ###   ########.fr       */
+/*   Updated: 2022/02/03 20:09:30 by ameteori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	deal_key(int key, fdf *data)
+int	deal_key(int key, t_fdf *data)
 {	
 	if (key == 126)
 		data->shift_y -= 10;
@@ -35,10 +35,10 @@ int	deal_key(int key, fdf *data)
 
 int	main(int ac, char **av)
 {
-	fdf	*data;
+	t_fdf	*data;
 
 	(void)ac;
-	data = (fdf *)malloc(sizeof(fdf));
+	data = (t_fdf *)malloc(sizeof(t_fdf));
 	read_file(av[1], data);
 	data->mlx_ptr = mlx_init();
 	data->win_ptr = mlx_new_window(data->mlx_ptr, 1000, 1000, "FDF");
