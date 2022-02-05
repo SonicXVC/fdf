@@ -6,7 +6,7 @@
 /*   By: ameteori <ameteori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 15:32:26 by ameteori          #+#    #+#             */
-/*   Updated: 2022/02/03 20:09:59 by ameteori         ###   ########.fr       */
+/*   Updated: 2022/02/05 15:49:29 by ameteori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	shift(t_point *tmp, t_point *tmp1, t_point *step, t_fdf *data)
 
 void	isom(float *x, float *y, int z)
 {
-	*x = (*x - *y) * cos(1);
-	*y = (*x + *y) * sin(1) - z;
+	*x = (*x - *y) * cos(0.8);
+	*y = (*x + *y) * sin(0.8) - z;
 }
 
 void	formula(t_point tmp, t_point tmp1, t_fdf *data)
