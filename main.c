@@ -6,7 +6,7 @@
 /*   By: ameteori <ameteori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:53:21 by ameteori          #+#    #+#             */
-/*   Updated: 2022/02/03 20:09:30 by ameteori         ###   ########.fr       */
+/*   Updated: 2022/02/05 19:03:08 by ameteori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ int	deal_key(int key, t_fdf *data)
 	if (key == 124)
 		data->shift_x += 10;
 	if (key == 53)
-		exit(EXIT_FAILURE);
+	{
+		exit(0);
+	}
 	if (key == 13)
 		data->zoom += 2;
 	if (key == 1)
@@ -46,6 +48,7 @@ int	main(int ac, char **av)
 	data->shift_x = 500;
 	data->shift_y = 500;
 	draw(data);
+	
 	mlx_key_hook(data->win_ptr, deal_key, data);
 	mlx_loop(data->mlx_ptr);
 }
