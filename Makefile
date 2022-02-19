@@ -1,7 +1,7 @@
 NAME =	fdf
 
 CC =	gcc
-CFLAGS =	-g -Werror -Wextra -Wall -MMD 
+CFLAGS =	-g -Werror -Wextra -Wall -MMD
 
 RM =	rm -rf
 

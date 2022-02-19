@@ -86,5 +86,4 @@ void	read_file(char *file_name, t_fdf *data)
 	if (line)
 		free(line);
 	close(fd);
-	data->z_matrix[data->width] = NULL;
 }
