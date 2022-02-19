@@ -33,3 +33,16 @@ void	color(int z, int z1, t_fdf *data)
 	else
 		data->color = 0xffffff;
 }
+
+void	my_mlx_pixel_put(t_fdf *data, int x, int y, int color)
+{
+	int	i;
+
+	if (x < 1920 && y < 1080 && x > 0 && y > 0)
+	{
+		i = (y * data->line_length + (x * data->bits_per_pixel / 8));
+		data->addr[i] = color;
+		data->addr[++i] = color >> 8;
+		data->addr[++i] = color >> 16;
+	}
+}

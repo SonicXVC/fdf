@@ -51,7 +51,7 @@ void	formula(t_point tmp, t_point tmp1, t_fdf *data)
 	step.y /= max;
 	while ((int)(tmp.x - tmp1.x) || (int)(tmp.y - tmp1.y))
 	{
-		mlx_pixel_put(data->mlx_ptr, data->win_ptr, tmp.x, tmp.y, data->color);
+		my_mlx_pixel_put(data, tmp.x, tmp.y, data->color);
 		tmp.x += step.x;
 		tmp.y += step.y;
 	}

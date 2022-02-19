@@ -14,9 +14,9 @@
 
 int	get_height(char *file_name)
 {
-	int	fd;
-	int	height;
-	char *line;
+	int		fd;
+	int		height;
+	char	*line;
 
 	fd = open(file_name, O_RDONLY, 0);
 	height = 0;
@@ -68,7 +68,7 @@ void	read_file(char *file_name, t_fdf *data)
 	int		i;
 
 	data->height = get_height(file_name);
-	data->width = get_width(file_name); // ONLY FIRST LINE?
+	data->width = get_width(file_name);
 	data->z_matrix = (int **)malloc(sizeof(int *) * (data->height + 1));
 	i = 0;
 	while (i <= data->height)

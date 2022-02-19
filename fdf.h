@@ -34,6 +34,11 @@ typedef struct s_fdf
 
 	void	*mlx_ptr;
 	void	*win_ptr;
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
 }			t_fdf;
 
 typedef struct s_point
@@ -51,9 +56,9 @@ void	fill_matrix(int *z_line, char *line);
 void	read_file(char *file_name, t_fdf *data);
 void	formula(t_point tmp, t_point tmp1, t_fdf *data);
 void	isom(float *x, float *y, int z);
-int		deal_mouse(int key, t_fdf *data);
 int		deal_key(int key, t_fdf *data);
 void	draw(t_fdf *data);
 void	shift(t_point *tmp, t_point *tmp1, t_point *step, t_fdf *data);
+void	my_mlx_pixel_put(t_fdf *data, int x, int y, int color);
 
 #endif
