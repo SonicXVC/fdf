@@ -6,7 +6,7 @@
 /*   By: ameteori <ameteori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 19:18:12 by ameteori          #+#    #+#             */
-/*   Updated: 2022/02/23 16:34:44 by ameteori         ###   ########.fr       */
+/*   Updated: 2022/02/23 17:16:29 by ameteori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	check(int ac, char **av)
 	{
 		ft_error("ERROR: Bad map path, try: test_maps/....fdf");
 	}
-	if (ft_strlen(av[1]) < 5)
+	if (ft_strlen(av[1]) < 4)
 	{
 		ft_error("ERROR: Invalid filename");
 	}
