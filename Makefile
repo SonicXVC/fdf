@@ -11,6 +11,7 @@ SRC =	draw.c\
 		get_next_line_utils.c\
 		get_next_line.c\
 		utils.c\
+		utils2.c\
 
 INCLUDE =	-I get_next_line.h\
 			-I fdf.h\

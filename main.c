@@ -6,11 +6,23 @@
 /*   By: ameteori <ameteori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:53:21 by ameteori          #+#    #+#             */
-/*   Updated: 2022/02/05 19:03:08 by ameteori         ###   ########.fr       */
+/*   Updated: 2022/02/23 16:34:45 by ameteori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void	win_init(t_fdf *data)
+{
+	data->mlx_ptr = mlx_init();
+	data->win_ptr = mlx_new_window(data->mlx_ptr, 1920, 1080, "FDF");
+	data->img = mlx_new_image(data->mlx_ptr, 1920, 1080);
+	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, \
+					&data->line_length, &data->endian);
+	data->zoom = 15;
+	data->shift_x = 500;
+	data->shift_y = 500;
+}
 
 void	redraw(t_fdf *data)
 {
@@ -65,16 +77,12 @@ int	main(int ac, char **av)
 	t_fdf	*data;
 
 	(void)ac;
+	check(ac, av);
 	data = (t_fdf *)malloc(sizeof(t_fdf));
+	if (!data)
+		return (0);
 	read_file(av[1], data);
-	data->mlx_ptr = mlx_init();
-	data->win_ptr = mlx_new_window(data->mlx_ptr, 1920, 1080, "FDF");
-	data->img = mlx_new_image(data->mlx_ptr, 1920, 1080);
-	data->addr = mlx_get_data_addr(data->img, &data->bits_per_pixel, \
-					&data->line_length, &data->endian);
-	data->zoom = 15;
-	data->shift_x = 500;
-	data->shift_y = 500;
+	win_init(data);
 	draw(data);
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img, 0, 0);
 	mlx_key_hook(data->win_ptr, deal_key, data);

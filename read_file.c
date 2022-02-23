@@ -19,6 +19,11 @@ int	get_height(char *file_name)
 	char	*line;
 
 	fd = open(file_name, O_RDONLY, 0);
+	if (fd == -1)
+	{
+		ft_putstr("Invalid map");
+		return (0);
+	}
 	height = 0;
 	line = get_next_line(fd);
 	while (line)
@@ -38,6 +43,11 @@ int	get_width(char *file_name)
 	int		fd;
 
 	fd = open(file_name, O_RDONLY);
+	if (fd == -1)
+	{
+		ft_putstr("Invalid map");
+		return (0);
+	}
 	line = get_next_line(fd);
 	width = ft_nb_of_strs(line, ' ');
 	if (line)
@@ -52,6 +62,11 @@ void	fill_matrix(int *z_line, char *line)
 	int		i;
 
 	nums = ft_split(line, ' ');
+	if (!nums)
+	{
+		ft_putstr("Invalid map");
+		return ;
+	}
 	i = -1;
 	while (nums[++i])
 	{
@@ -72,8 +87,10 @@ void	read_file(char *file_name, t_fdf *data)
 	data->z_matrix = (int **)malloc(sizeof(int *) * (data->height + 1));
 	i = 0;
 	while (i <= data->height)
-		data->z_matrix[i++] = (int *)malloc(sizeof(int) * (data->width + 1));
+		data->z_matrix[i++] = (int *) malloc(sizeof(int) * (data->width + 1));
 	fd = open(file_name, O_RDONLY);
+	if (fd == -1)
+		return ;
 	i = 0;
 	while (i < data->height)
 	{

@@ -6,7 +6,7 @@
 /*   By: ameteori <ameteori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:50:34 by ameteori          #+#    #+#             */
-/*   Updated: 2022/02/03 20:10:14 by ameteori         ###   ########.fr       */
+/*   Updated: 2022/02/23 16:34:42 by ameteori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,7 @@ int		deal_key(int key, t_fdf *data);
 void	draw(t_fdf *data);
 void	shift(t_point *tmp, t_point *tmp1, t_point *step, t_fdf *data);
 void	my_mlx_pixel_put(t_fdf *data, int x, int y, int color);
+void	check(int ac, char **av);
+void	ft_error(char *mess);
 
 #endif

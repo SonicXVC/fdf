@@ -17,6 +17,7 @@ SRCS =	ft_atoi.c ft_bzero.c \
 		ft_strnstr.c ft_strrchr.c \
 		ft_strtrim.c ft_substr.c \
 		ft_tolower.c ft_toupper.c \
+		ft_putchar.c ft_putstr.c \
 
 SRCS_BON = ft_lstnew.c ft_lstadd_front.c \
 		ft_lstsize.c ft_lstlast.c \
