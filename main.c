@@ -6,7 +6,7 @@
 /*   By: ameteori <ameteori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:53:21 by ameteori          #+#    #+#             */
-/*   Updated: 2022/02/23 16:58:04 by ameteori         ###   ########.fr       */
+/*   Updated: 2022/02/25 18:07:19 by ameteori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ int	main(int ac, char **av)
 {
 	t_fdf	*data;
 
-	(void)ac;
 	check(ac, av);
 	data = (t_fdf *)malloc(sizeof(t_fdf));
 	if (!data)

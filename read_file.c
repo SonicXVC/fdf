@@ -6,7 +6,7 @@
 /*   By: ameteori <ameteori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 16:50:26 by ameteori          #+#    #+#             */
-/*   Updated: 2022/02/23 19:14:44 by ameteori         ###   ########.fr       */
+/*   Updated: 2022/02/25 18:06:48 by ameteori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	get_height(char *file_name)
 	fd = open(file_name, O_RDONLY, 0);
 	if (fd == -1)
 	{
-		ft_error("Invalid map");
+		ft_error("ERROR: Invalid map");
 	}
 	height = 0;
 	line = get_next_line(fd);
@@ -44,7 +44,7 @@ int	get_width(char *file_name)
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
 	{
-		ft_error("Invalid map");
+		ft_error("ERROR: Invalid map");
 	}
 	line = get_next_line(fd);
 	width = ft_nb_of_strs(line, ' ');
@@ -62,7 +62,7 @@ void	fill_matrix(int *z_line, char *line)
 	nums = ft_split(line, ' ');
 	if (!nums)
 	{
-		ft_error("Invalid map");
+		ft_error("ERROR: Invalid map");
 	}
 	i = -1;
 	while (nums[++i])
